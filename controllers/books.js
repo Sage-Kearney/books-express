@@ -6,7 +6,11 @@ const router = express.Router();
 router.get('/', (req, res) => {
   Book.find({}).then(books => {
     res.render('index', { books });
-  });
+});
+});
+
+router.get('/new', (req, res) => {
+  res.render('new');
 });
 
 router.get('/:title/edit', (req, res) => {
@@ -33,5 +37,14 @@ router.get('/:title', (req, res) => {
     res.render('show', book[0]);
   });
 });
+
+
+router.post('/', (req, res) => {
+    Book.create(req.body)
+    .then(book => {
+        res.redirect('/books')
+    })
+})
+
 
 module.exports = router;
