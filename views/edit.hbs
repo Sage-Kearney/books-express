@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+<form action='/books/{{title}}?_method=put' method='POST'>
+    <p>
+        <label>I read this</label>
+        {{#if read}}
+        <input type="checkbox" name="read" checked />
+        {{else}}
+        <input type="checkbox" name="read" />
+        {{/if}}
+    </p>
+    <p>Write a review:</p>
+    <textarea name="review" placeholder={{review}} value={{review}} cols="50" rows="5">{{review}}</textarea>
+    <input type="submit" value="Update" />
+
+    <a href='/books/{{title}}/delete'>delete this entry</a>
+</form>

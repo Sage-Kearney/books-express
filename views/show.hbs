@@ -1,7 +1,15 @@
 <img src={{image}} alt={{title}} />
-<h1>header {{title}}</h1>
-<p>para {{author}}</p>
-<p>para {{category}}</p>
-<p>para {{summary}}</p>
+<h1>{{title}}</h1>
+<p>{{author}}</p>
+<p>{{category}}</p>
+<h3>Synopsis:</h3>
+<p>{{summary}}</p>
+{{#if read}}
+<p>I read this one.</p>
+{{else}}
+<p>Haven't read this one!</p>
+{{/if}}
+<h3>Your Review:</h3>
+<p>{{review}}</p>
 <a href="/books/{{title}}/edit">edit</a>
 <a href="/books">go back home</a>
