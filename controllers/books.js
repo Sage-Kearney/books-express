@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   Book.find({}).then(books => {
     res.render('index', { books });
-});
+  });
 });
 
 router.get('/new', (req, res) => {
@@ -17,6 +17,12 @@ router.get('/:title/edit', (req, res) => {
   Book.findOne({ title: req.params.title }).then(book => {
     res.render('edit', book);
   });
+});
+
+router.get('/:title/delete', (req, res) => {
+    Book.find({ title: req.params.title }).then(book => {
+        res.render('delete', book[0]);
+    })
 });
 
 router.put('/:title', (req, res) => {
@@ -38,13 +44,17 @@ router.get('/:title', (req, res) => {
   });
 });
 
-
 router.post('/', (req, res) => {
-    Book.create(req.body)
-    .then(book => {
-        res.redirect('/books')
-    })
-})
+  Book.create(req.body).then(book => {
+    res.redirect('/books');
+  });
+});
+
+router.delete('/:title/delete', (req, res) => {
+  Book.findOneAndDelete({ title: req.params.title }).then(() => {
+    res.redirect('/books');
+  });
+});
 
 
 module.exports = router;
