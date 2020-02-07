@@ -1,59 +1,81 @@
-h1, h3 {
-    font-family: Georgia, serif;
+h1,
+h3 {
+  font-family: Georgia, serif;
 }
 
-p, a {
-    font-family: Verdana, Tahoma, sans-serif
+p,
+a,
+label {
+  font-family: Verdana, Tahoma, sans-serif;
 }
 
 h1 {
-    text-align: center;
-    background: white;
+  text-align: center;
+  background: white;
 }
 
-a {
-    padding: .75em 1em;
-    text-decoration: none;
-    background: #ccc;
-    color: black;
-    text-transform: uppercase;
-    letter-spacing: .2em;
-    font-size: .8em;
+a,
+.button {
+  padding: 0.75em 1em;
+  text-decoration: none;
+  background: #ccc;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8em;
 }
 
 .rule {
-    display: flex;
-    -webkit-align-items: flex-end;
-    align-items: flex-end;
-    height: 1em;
-    line-height: .3;
+  display: flex;
+  align-items: flex-end;
+  height: 1em;
+  line-height: 0.3;
 }
 
 .rule:before {
-    margin-right: .5em;
+  margin-right: 0.5em;
 }
 .rule:after {
-    margin-left: .5em;
+  margin-left: 0.5em;
 }
-.rule:after, .rule:before {
-    content: " ";
-    position: relative;
-    background-color: #ccc;
-    display: block;
-    height: 1px;
-    -webkit-flex-grow: .5;
-    flex-grow: .5;
+.rule:after,
+.rule:before {
+  content: ' ';
+  position: relative;
+  background-color: #ccc;
+  display: block;
+  height: 1px;
+  flex-grow: 0.5;
 }
 
 .flex-container {
-    display: flex;
-    max-width: 100em;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  display: flex;
+  max-width: 100em;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.flex-item{
-    width: 20em;
-    text-align: center;
-    margin: 2em 0;
+.flex-item {
+  width: 20em;
+  text-align: center;
+  margin: 2em 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type='text'],
+textarea {
+  max-width: 50em;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+
+input[type='submit'],
+form a {
+  margin: 1em 0;
+  width: max-content;
+  cursor: pointer;
 }
