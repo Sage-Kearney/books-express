@@ -1,0 +1,61 @@
+h1, h3 {
+    font-family: Georgia, serif;
+}
+
+p, a {
+    font-family: Verdana, Tahoma, sans-serif
+}
+
+h1 {
+    text-align: center;
+    background: white;
+}
+
+a {
+    /* border: .5px solid black; */
+    padding: .75em 1em;
+    text-decoration: none;
+    background: #ccc;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: .8em;
+}
+
+.rule {
+    display: flex;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    height: 1em;
+    line-height: .3;
+}
+
+.rule:before {
+    margin-right: .5em;
+}
+.rule:after {
+    margin-left: .5em;
+}
+.rule:after, .rule:before {
+    content: " ";
+    position: relative;
+    background-color: #ccc;
+    display: block;
+    height: 1px;
+    -webkit-flex-grow: .5;
+    flex-grow: .5;
+}
+
+.flex-container {
+    display: flex;
+    max-width: 100em;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.flex-item{
+    /* border: 1px solid black; */
+    width: 20em;
+    text-align: center;
+    margin: 2em 0;
+}
